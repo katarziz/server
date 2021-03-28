@@ -1,11 +1,11 @@
 import mongoose from 'mongoose';
-import PostMessage from '../models/postMessage.js';
+import Entry from '../models/entry.js';
 
 export const getPosts = async (req, res) => {
     try {
-        const postMessages = await PostMessage.find();
+        const entries = await Entry.find();
 
-        res.status(200).json(postMessages);
+        res.status(200).json(entries);
     } catch (error) {
         res.status(404).json({message:error});
     }
@@ -14,7 +14,7 @@ export const getPosts = async (req, res) => {
 export const createPost = async (req, res) => {
     const body = req.body;
 
-    const newPost = new PostMessage(body);
+    const newPost = new Entry(body);
 
     try {
         await newPost.save();
@@ -31,7 +31,7 @@ export const updatePost = async (req, res) => {
 
     if(!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No post with that id');
 
-    const updatedPost = await PostMessage.findByIdAndUpdate(_id, { ...body, _id }, { new: true });
+    const updatedPost = await Entry.findByIdAndUpdate(_id, { ...body, _id }, { new: true });
 
     res.json(updatedPost);
 }
@@ -41,7 +41,7 @@ export const deletePost = async (req, res) => {
 
     if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No post with that id');
 
-    await PostMessage.findByIdAndRemove(id);
+    await Entry.findByIdAndRemove(id);
 
     res.json({ message: 'Post deleted successfully' });
 }

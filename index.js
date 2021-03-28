@@ -3,7 +3,7 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import postRoutes from './routes/posts.js';
+import entryRoutes from './routes/entries.js';
 
 const app = express();
 dotenv.config();
@@ -12,10 +12,10 @@ app.use(bodyParser.json({limit:"30mb",extended:true}));
 app.use(bodyParser.urlencoded({limit:"30mb",extended:true}));
 app.use(cors());
 
-app.use('/posts',postRoutes);
+app.use('/entries',entryRoutes);
 
 app.get('/',(req,res) => {
-    res.send('Hello to Humboldt4Future API');
+    res.send('Welcome to Humboldt4Future API');
 });
 
 const PORT = process.env.PORT || 5000;

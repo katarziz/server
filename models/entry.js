@@ -1,10 +1,15 @@
 import mongoose from 'mongoose';
 
 const entrySchema = mongoose.Schema({
-    title : String,
-    message : String,
-    creator : String,
-    tags : [String],
+    input1 : String,
+    input2 : String,
+    input3 : String,
+    input4 : String,
+    input5 : String,
+    input6 : String,
+    input7 : String,
+    input8 : String,
+    input9 : String,
     createdAt : {
         type : Date,
         default : new Date()

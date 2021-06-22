@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import Entry from '../models/entry.js';
 
+/*
 export const getEntries = async (req, res) => {
     try {
         const entries = await Entry.find();
@@ -10,6 +11,7 @@ export const getEntries = async (req, res) => {
         res.status(404).json({message:error});
     }
 }
+*/
 
 export const createEntry = async (req, res) => {
     const body = req.body;
@@ -25,6 +27,7 @@ export const createEntry = async (req, res) => {
     }
 }
 
+/*
 export const updateEntry = async (req, res) => {
     const { id: _id } = req.params;
     const body = req.body;
@@ -45,3 +48,4 @@ export const deleteEntry = async (req, res) => {
 
     res.json({ message: 'Entry deleted successfully' });
 }
+*/

@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
 import Entry from '../models/entry.js';
 
-/*
 export const getEntries = async (req, res) => {
     try {
         const entries = await Entry.find();
@@ -11,7 +10,6 @@ export const getEntries = async (req, res) => {
         res.status(404).json({message:error});
     }
 }
-*/
 
 export const createEntry = async (req, res) => {
     const body = req.body;

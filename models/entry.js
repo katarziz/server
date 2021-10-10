@@ -1,19 +1,21 @@
 import mongoose from 'mongoose';
 
 const entrySchema = mongoose.Schema({
-    input1 : String,
-    input2 : String,
-    input3 : String,
-    input4 : String,
-    input5 : String,
-    input6 : String,
-    input7 : String,
-    input8 : String,
-    input9 : String,
-    createdAt : {
-        type : Date,
-        default : new Date()
-    },
+    0 : { answer: String},
+    1 : { answer: String},
+    2 : { answer: String},
+    3 : { answer: String},
+    4 : { answer: String},
+    5 : { answer: String},
+    6 : { answer: String},
+    7 : { answer: String},
+    8 : { answer: String},
+    9 : { answer: String},
+    10 : { answer: String},
+    11 : { answer: String},
+    12 : { answer: String},
+    13 : { answer: String},
+    14 : { score: Number}
 });
 
 const Entry = mongoose.model('Entry', entrySchema);

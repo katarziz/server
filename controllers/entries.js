@@ -7,7 +7,7 @@ export const getEntries = async (req, res) => {
 
         res.status(200).json(entries);
     } catch (error) {
-        res.status(404).json({message:error});
+        res.status(405).json({message:error});
     }
 }
 

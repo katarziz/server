@@ -15,7 +15,9 @@ const entrySchema = mongoose.Schema({
     11 : { answer: String},
     12 : { answer: String},
     13 : { answer: String},
-    14 : { score: Number}
+    14 : { answer: String},
+    15 : { answer: String},
+    16 : { score: Number}
 });
 
 const Entry = mongoose.model('Entry', entrySchema);

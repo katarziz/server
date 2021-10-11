@@ -15,7 +15,7 @@ app.use(cors());
 app.use('/entries',entryRoutes);
 
 app.get('/',(req,res) => {
-    res.send('Welcome to Humboldt4Future API');
+    res.send('');
 });
 
 const PORT = process.env.PORT || 5000;
